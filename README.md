@@ -13,8 +13,8 @@ Este projeto tem como objetivo realizar uma análise exploratória espacial de d
 Através das visualizações interativas e estáticas geradas, buscamos compreender a densidade dos restaurantes e analisar a relação espacial entre a localização, as avaliações dos clientes e as taxas de entrega cobradas.
 
 ## 💾 Fonte de Dados e Armazenamento
-* **Origem:** Os dados foram obtidos através de um dataset público no Kaggle contendo registros de restaurantes do Uber Eats.
-* **Armazenamento (T1):** Para esta etapa inicial, os dados estão armazenados localmente e disponibilizados junto à entrega no arquivo `Ubereat_US_Merchant.csv`. 
+* **Origem:** Os dados foram obtidos através de um dataset público no Kaggle contendo registros de restaurantes do Uber Eats. O dataset pode ser acessado por este [link](https://www.kaggle.com/datasets/thedevastator/the-ubereats-restaurant-dataset-over-100000-us-r)
+* **Armazenamento (T1):** Para esta etapa inicial, os dados estão armazenados localmente e disponibilizados junto à entrega no arquivo `Ubereat_US_Merchant.csv`, dentro da pasta `Dataset`
 * *(Nota: Para a etapa T2, os dados tratados neste notebook serão migrados para um banco de dados PostgreSQL com a extensão espacial PostGIS).*
 
 ## 🛠️ Ferramentas Utilizadas
@@ -48,10 +48,14 @@ Como o script foi projetado e testado no **Google Colab**, recomendamos fortemen
 ---
 
 ## 🔮 Proposta para Análise Futura (T2)
-A partir da exploração inicial e do tratamento de dados geográficos, isolamos com sucesso os estabelecimentos do Uber Eats operantes nos limites da cidade de Birmingham (Alabama). Através da visualização estática gerada acima, é possível notar padrões de distribuição espacial, confirmando a viabilidade do projeto. Observa-se uma forte concentração no corredor central e nordeste de Birmingham, com variação visual clara tanto nas avaliações quanto nas taxas de entrega.
 
-Para a segunda fase do projeto, o foco será aprofundar a investigação geográfica voltada para a **acessibilidade urbana** e **inteligência de mercado**. As principais frentes de estudo serão:
+A partir da exploração inicial e do tratamento de dados geográficos, isolamos com sucesso os estabelecimentos do Uber Eats operantes nos limites da cidade de Birmingham (Alabama). A visualização espacial revelou concentrações claras de restaurantes, bem como variações notáveis tanto nas avaliações dos clientes quanto nas taxas de entrega.
 
-* **Identificação de "Desertos de Delivery":** Cruzar a localização atual dos restaurantes mapeados com as zonas residenciais da cidade para descobrir se existem bairros habitados que sofrem com escassez de opções de entrega.
-* **Análise de Precificação Espacial (Desigualdade de Acesso):** Investigar se existe um padrão geográfico claro que dite a variação das taxas de entrega. O objetivo é responder se moradores de regiões mais afastadas dos grandes centros comerciais pagam taxas sistematicamente mais altas, dificultando o acesso ao serviço.
-* **Mapeamento de Oportunidades de Expansão:** Utilizar a relação entre a avaliação dos clientes e a densidade de restaurantes para apontar regiões com "demanda reprimida" — ou seja, locais ideais para a abertura de novos negócios focados em delivery (*Dark Kitchens*), onde a concorrência atual possui baixa qualidade ou cobra taxas abusivas.
+**Diretrizes para a Análise (Etapa T2):**
+Embora os dados pertençam ao mercado norte-americano, o objetivo da próxima etapa será desenvolver e validar um **modelo de inteligência espacial que possa ser replicado no mercado brasileiro de delivery** (como iFood, Rappi, Keeta, entre outros). O foco será investigar a relação espacial entre Preço, Taxa de Entrega e Satisfação do Cliente.
+
+As principais frentes de estudo com o auxílio do **PostgreSQL + PostGIS** serão:
+
+1. **Mapeamento do Custo-Benefício Espacial:** Investigar se existe uma correlação geográfica entre a categoria de preço do restaurante, o valor da entrega e a avaliação positiva. A hipótese é analisar se restaurantes em áreas mais nobres entregam uma melhor relação custo-benefício ou se as "joias escondidas" (baratos e bem avaliados) estão nas periferias.
+2. **Impacto da Localização na Satisfação:** Avaliar se restaurantes mais distantes dos bairros e regiões mais populosas tendem a ter avaliações piores devido ao tempo de trânsito e resfriamento da comida.
+3. **Viabilidade de Implementação no Brasil:** Utilizar os *insights* obtidos com este dataset para propor como serviços de delivery brasileiros poderiam usar análises de proximidade geométrica para otimizar suas próprias taxas de entrega, melhorar a distribuição de *Dark Kitchens* e exibir opções de melhor custo-benefício baseadas na localização exata do usuário.
