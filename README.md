@@ -1,4 +1,4 @@
-T1 - Geolocalização e Mapas Digitais
+## T1 - Geolocalização e Mapas Digitais
 
 ## 👥 Integrantes do Grupo
 * **Igor Improta Martinez da Silva** | RA: 21.00834-5
