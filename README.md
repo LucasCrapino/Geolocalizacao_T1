@@ -50,8 +50,8 @@ Como o script foi projetado e testado no **Google Colab**, recomendamos fortemen
 ## 🔮 Proposta para Análise Futura (T2)
 A partir da exploração inicial e do tratamento de dados geográficos, isolamos com sucesso os estabelecimentos do Uber Eats operantes nos limites da cidade de Birmingham (Alabama). Através da visualização estática gerada acima, é possível notar padrões de distribuição espacial, confirmando a viabilidade do projeto. Observa-se uma forte concentração no corredor central e nordeste de Birmingham, com variação visual clara tanto nas avaliações quanto nas taxas de entrega.
 
-**Passos técnicos previstos:**
-1. Armazenar os dados tratados neste notebook no PostgreSQL utilizando as capacidades do PostGIS.
-2. Extrair polígonos de bairros ou zonas residenciais de Birmingham via OpenStreetMap.
-3. Utilizar funções de relação espacial do PostGIS (como `ST_Intersects` e `ST_DWithin`) para cruzar a localização dos restaurantes com as zonas habitacionais.
-4. Identificar visualmente e analiticamente "desertos de delivery" — áreas residenciais que sofrem com baixa disponibilidade de restaurantes e/ou taxas de entrega estatisticamente mais altas.
+Para a segunda fase do projeto, o foco será aprofundar a investigação geográfica voltada para a **acessibilidade urbana** e **inteligência de mercado**. As principais frentes de estudo serão:
+
+* **Identificação de "Desertos de Delivery":** Cruzar a localização atual dos restaurantes mapeados com as zonas residenciais da cidade para descobrir se existem bairros habitados que sofrem com escassez de opções de entrega.
+* **Análise de Precificação Espacial (Desigualdade de Acesso):** Investigar se existe um padrão geográfico claro que dite a variação das taxas de entrega. O objetivo é responder se moradores de regiões mais afastadas dos grandes centros comerciais pagam taxas sistematicamente mais altas, dificultando o acesso ao serviço.
+* **Mapeamento de Oportunidades de Expansão:** Utilizar a relação entre a avaliação dos clientes e a densidade de restaurantes para apontar regiões com "demanda reprimida" — ou seja, locais ideais para a abertura de novos negócios focados em delivery (*Dark Kitchens*), onde a concorrência atual possui baixa qualidade ou cobra taxas abusivas.
